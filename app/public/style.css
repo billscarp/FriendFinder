@@ -8,7 +8,10 @@ body {
 
 .jumbotron{
 
-    margin: 120px 140px;
-    width: 800px;
+    margin: 120px 170px;
+    width: 725px;
+    background-image: url('guitar.jpg');
+    background-repeat: repeat-y;
+    opacity: 0.6;
     
 }
