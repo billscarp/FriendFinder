@@ -13,4 +13,6 @@ function apiCalls(app, __dirname) {
 }
 module.exports = apiCalls;
 
+app.post('/api/friends', function(req, res){
+
 
