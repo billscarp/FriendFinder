@@ -36,7 +36,7 @@
 
         <h3>Question 1</h3>
         <h4>Have you ever felt a sudden urge to make love to or set a guitar on fire?</h4>
-        <select id="question1">
+        <select id="q1">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -47,7 +47,7 @@
         <br>
         <h3>Question 2</h3>
         <h4>You tend to feel a little blue sometimes?</h4>
-        <select id="question2">
+        <select id="q2">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -59,7 +59,7 @@
 
         <h3>Question 3</h3>
         <h4>You have always had an affinity Poke-A-Dots?</h4>
-        <select id="question3">
+        <select id="q3">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -71,7 +71,7 @@
 
         <h3>Question 4</h3>
         <h4>You a rush out of smashing things that are very expensive?</h4>
-        <select id="question4">
+        <select id="q4">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -83,7 +83,7 @@
 
         <h3>Question 5</h3>
         <h4>You like to scream sing and use out of tune guitars.</h4>
-        <select id="question5">
+        <select id="q5">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -95,7 +95,7 @@
 
         <h3>Question 6</h3>
         <h4>When going out for the evening, you like to wear a top-hat.</h4>
-        <select id="question6">
+        <select id="q6">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -107,7 +107,7 @@
 
         <h3>Question 7</h3>
         <h4>You make playing guitar at insane speeds seem effortless.</h4>
-        <select id="question7">
+        <select id="q7">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -118,7 +118,7 @@
         <br>
         <h3>Question 8</h3>
         <h4>While playing, you have been known to indulge in cocktails of drugs and alcohol.</h4>
-        <select id="question8">
+        <select id="q8">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -129,7 +129,7 @@
         <br>
         <h3>Question 9</h3>
         <h4>You are amazing at playing guitar, you wear glasses and collect Ferraris.</h4>
-        <select id="question9">
+        <select id="q9">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -140,7 +140,7 @@
         <br>
         <h3>Question 10</h3>
         <h4>You love to play rock music.</h4>
-        <select id="question10">
+        <select id="q10">
                     <option value="1">1(Never)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -154,10 +154,44 @@
 
 
 
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="Blah" aria-hidden="true"></i>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="submit-btn" aria-hidden="true"></i>
      Submit</button>
 
     </div>
+
+
+    <script type="text/javascript">
+        // Question: What does this code do?
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+          console.log("test")
+          var scoresum = [];
+            scoresum.push($("#q1").val());
+            scoresum.push($("#q2").val());
+            scoresum.push($("#q3").val());
+            scoresum.push($("#q4").val());
+            scoresum.push($("#q5").val());
+            scoresum.push($("#q6").val());
+            scoresum.push($("#q7").val());
+            scoresum.push($("#q8").val());
+            scoresum.push($("#q9").val());
+            scoresum.push($("#q10").val());
+    
+          var arrayQ = {
+            god: $("#name").val().trim(),
+            gif: $("#phone").val().trim(),
+          
+          };
+    
+         
+          $.post("/api/new", arrayQ)
+          .done(function(data) {
+            console.log(data);
+            alert("");
+          });
+    
+        });
+    </script>
 
 </body>
 
