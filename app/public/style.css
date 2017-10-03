@@ -1,9 +1,7 @@
-
-body {
+body.home {
     background-image: url('guitargod.jpg');
     background-repeat: repeat-y;
     background-position: center center;
-    
 }
 
 .jumbotron{
